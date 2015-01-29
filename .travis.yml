@@ -1,12 +1,10 @@
 language: java
-
 jdk:
-  - oraclejdk8
-
+- oraclejdk8
 env:
   global:
   - SONATYPE_USERNAME=ralscha23
-  - secure: cA9LHuzV5hLTjXNng+YuA2zO/tap9ozEnfIFmTMWox6eDgoP/4WOOD32imJo5K0PJzbQaoXHHXOGuqQB0soVbVikPJ1+9h5Qsqi7q7zcA5wDk+IEQl0d6Z+ytUqD0o/I6LXAHuPRzU3wW98KJuB9rvFh0NGeksCzVLG8x88KD3U=
+  - secure: SAVN88acaS7UZPWZnXJY2zwFudTVeQD7x75ps/GKGr2MckOuPei9lrVoDJb6zrQE238ld+fUEbG/hnNGJ92KXYDyeXhNIwTEZumcWR3RjbVimGFDZaYoE++KCxnqd8Ybt3r5mzTzIVnEeTsJ0XolKUy8Y3+QEVKugw9S4hvHQfs=
 after_success:
 - python addsettings.py
 - mvn clean deploy -DskipTests=true --settings ~/.m2/mySettings.xml
