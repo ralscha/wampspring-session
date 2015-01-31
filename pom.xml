@@ -20,7 +20,7 @@
 
 	<name>Integration of wampspring with Spring Session</name>
 	<description>Integration of wampspring with Spring Session</description>
-	<url>https://github.com/ralscha/wampspring/</url>
+	<url>https://github.com/ralscha/wampspring-session/</url>
 
 	<developers>
 		<developer>
