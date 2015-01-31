@@ -40,13 +40,13 @@
 
 	<issueManagement>
 		<system>GitHub</system>
-		<url>https://github.com/ralscha/wampspring/issues</url>
+		<url>https://github.com/ralscha/wampspring-session/issues</url>
 	</issueManagement>
 
 	<scm>
-		<connection>scm:git:git@github.com:ralscha/wampspring.git</connection>
-		<developerConnection>scm:git:git@github.com:ralscha/wampspring.git</developerConnection>
-		<url>https://github.com/ralscha/wampspring.git</url>
+		<connection>scm:git:git@github.com:ralscha/wampspring-session.git</connection>
+		<developerConnection>scm:git:git@github.com:ralscha/wampspring-session.git</developerConnection>
+		<url>https://github.com/ralscha/wampspring-session.git</url>
 	</scm>
 
 	<properties>
