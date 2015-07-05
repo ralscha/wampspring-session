@@ -35,8 +35,8 @@ import ch.rasc.wampspring.message.WampMessage;
  * @author Rob Winch
  * @author Ralph Schaer
  */
-public final class SessionRepositoryMessageInterceptor<S extends ExpiringSession> extends
-		ChannelInterceptorAdapter {
+public final class SessionRepositoryMessageInterceptor<S extends ExpiringSession>
+		extends ChannelInterceptorAdapter {
 
 	private final SessionRepository<S> sessionRepository;
 
@@ -57,8 +57,8 @@ public final class SessionRepositoryMessageInterceptor<S extends ExpiringSession
 		}
 
 		if (message instanceof WampMessage) {
-			String sessionId = ((WampMessage) message).getWampSession().getAttribute(
-					SessionSupport.SPRING_SESSION_ID_ATTR_NAME);
+			String sessionId = ((WampMessage) message).getWampSession()
+					.getAttribute(SessionSupport.SPRING_SESSION_ID_ATTR_NAME);
 			if (sessionId != null) {
 				S session = this.sessionRepository.getSession(sessionId);
 				if (session != null) {

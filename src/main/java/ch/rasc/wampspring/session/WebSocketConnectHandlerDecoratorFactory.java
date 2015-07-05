@@ -39,8 +39,8 @@ import org.springframework.web.socket.handler.WebSocketHandlerDecoratorFactory;
  *
  * @see WebSocketRegistryListener
  */
-public final class WebSocketConnectHandlerDecoratorFactory implements
-		WebSocketHandlerDecoratorFactory {
+public final class WebSocketConnectHandlerDecoratorFactory
+		implements WebSocketHandlerDecoratorFactory {
 
 	private static final Log logger = LogFactory
 			.getLog(WebSocketConnectHandlerDecoratorFactory.class);

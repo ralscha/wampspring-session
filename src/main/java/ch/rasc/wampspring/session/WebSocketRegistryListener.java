@@ -38,8 +38,8 @@ import org.springframework.web.socket.WebSocketSession;
  * @author Rob Winch
  * @author Ralph Schaer
  */
-public final class WebSocketRegistryListener implements
-		ApplicationListener<ApplicationEvent> {
+public final class WebSocketRegistryListener
+		implements ApplicationListener<ApplicationEvent> {
 
 	private static final Log logger = LogFactory.getLog(WebSocketRegistryListener.class);
 
@@ -70,8 +70,8 @@ public final class WebSocketRegistryListener implements
 	}
 
 	private void afterWsConnectionClosed(WebSocketSession wsSession) {
-		String httpSessionId = (String) wsSession.getAttributes().get(
-				SessionSupport.SPRING_SESSION_ID_ATTR_NAME);
+		String httpSessionId = (String) wsSession.getAttributes()
+				.get(SessionSupport.SPRING_SESSION_ID_ATTR_NAME);
 		if (httpSessionId == null) {
 			return;
 		}
@@ -95,8 +95,8 @@ public final class WebSocketRegistryListener implements
 	}
 
 	private void registerWsSession(WebSocketSession wsSession) {
-		String httpSessionId = (String) wsSession.getAttributes().get(
-				SessionSupport.SPRING_SESSION_ID_ATTR_NAME);
+		String httpSessionId = (String) wsSession.getAttributes()
+				.get(SessionSupport.SPRING_SESSION_ID_ATTR_NAME);
 		if (httpSessionId == null) {
 			return;
 		}
@@ -118,8 +118,9 @@ public final class WebSocketRegistryListener implements
 			return;
 		}
 		if (logger.isDebugEnabled()) {
-			logger.debug("Closing WebSocket connections associated to expired HTTP Session "
-					+ httpSessionId);
+			logger.debug(
+					"Closing WebSocket connections associated to expired HTTP Session "
+							+ httpSessionId);
 		}
 		for (WebSocketSession toClose : sessionsToClose.values()) {
 			try {

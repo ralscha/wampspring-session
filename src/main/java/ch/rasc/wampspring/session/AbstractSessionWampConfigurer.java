@@ -28,8 +28,8 @@ import org.springframework.web.socket.server.HandshakeInterceptor;
 import ch.rasc.wampspring.config.AbstractWampConfigurer;
 import ch.rasc.wampspring.config.WebSocketTransportRegistration;
 
-public abstract class AbstractSessionWampConfigurer<S extends ExpiringSession> extends
-		AbstractWampConfigurer {
+public abstract class AbstractSessionWampConfigurer<S extends ExpiringSession>
+		extends AbstractWampConfigurer {
 
 	@Autowired
 	private SessionRepository<S> sessionRepository;
@@ -46,8 +46,8 @@ public abstract class AbstractSessionWampConfigurer<S extends ExpiringSession> e
 	 */
 	@Override
 	public void configureWebSocketTransport(WebSocketTransportRegistration registration) {
-		registration.addDecoratorFactory(new WebSocketConnectHandlerDecoratorFactory(
-				this.eventPublisher));
+		registration.addDecoratorFactory(
+				new WebSocketConnectHandlerDecoratorFactory(this.eventPublisher));
 	}
 
 	/*
@@ -67,7 +67,8 @@ public abstract class AbstractSessionWampConfigurer<S extends ExpiringSession> e
 	 * WebSocket properties to enable updating the last accessed time.
 	 */
 	@Override
-	public void addHandshakeInterceptors(List<HandshakeInterceptor> handshakeInterceptors) {
+	public void addHandshakeInterceptors(
+			List<HandshakeInterceptor> handshakeInterceptors) {
 		handshakeInterceptors.add(new SessionRepositoryHandshakeInterceptor());
 	}
 
@@ -78,8 +79,8 @@ public abstract class AbstractSessionWampConfigurer<S extends ExpiringSession> e
 	 */
 	@Override
 	public void configureClientInboundChannel(AbstractMessageChannel channel) {
-		channel.addInterceptor(new SessionRepositoryMessageInterceptor<>(
-				this.sessionRepository));
+		channel.addInterceptor(
+				new SessionRepositoryMessageInterceptor<>(this.sessionRepository));
 	}
 
 }
